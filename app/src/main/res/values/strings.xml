@@ -43,4 +43,10 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="pizza_icon">Ícono de pizza</string>
+    <string name="type">Tipo</string>
+    <string name="description">Descripción</string>
+    <string name="price">Precio</string>
+    <string name="add_pizza">Add Pizza</string>
+    <string name="thanks">Gracias por comprar en Dimare</string>
 </resources>

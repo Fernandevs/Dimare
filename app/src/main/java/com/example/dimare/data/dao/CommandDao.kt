@@ -4,9 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.dimare.data.entity.Command
+import com.example.dimare.data.entities.Command
 
 @Dao
 interface CommandDao {
@@ -16,12 +17,12 @@ interface CommandDao {
     @Query("SELECT * FROM commands WHERE commandId = :uid")
     fun findOne(uid: Int): LiveData<Command?>
 
-    @Insert
-    suspend fun insert(pizza: Command)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(command: Command)
 
     @Update
-    suspend fun update(pizza: Command)
+    suspend fun update(command: Command)
 
     @Delete
-    suspend fun remove(pizza: Command)
+    suspend fun remove(command: Command)
 }

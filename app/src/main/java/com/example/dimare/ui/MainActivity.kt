@@ -7,20 +7,15 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 
-import com.google.android.material.snackbar.Snackbar
-
 import com.example.dimare.R
-import com.example.dimare.data.database.DimareDatabase
-import com.example.dimare.data.entity.Pizza
+import com.example.dimare.data.entities.Command
 import com.example.dimare.databinding.ActivityMainBinding
 import com.example.dimare.viewmodel.DimareViewModel
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private val navController by lazy {

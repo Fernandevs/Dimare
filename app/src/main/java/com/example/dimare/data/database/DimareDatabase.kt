@@ -4,23 +4,21 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 
 import com.example.dimare.data.dao.CommandDao
-import com.example.dimare.data.dao.CommandWithPizzasDao
 // import com.example.dimare.data.dao.CommandWithPizzaDao
-import com.example.dimare.data.dao.PizzaDao
-import com.example.dimare.data.entity.Command
-import com.example.dimare.data.entity.Pizza
+import com.example.dimare.data.entities.Command
+import com.example.dimare.data.helpers.Converters
 
 @Database(
-    entities = [Command::class, Pizza::class],
+    entities = [Command::class],
     exportSchema = false,
     version = 1,
 )
+@TypeConverters(Converters::class)
 abstract class DimareDatabase : RoomDatabase() {
-    abstract fun pizzaDao(): PizzaDao
     abstract fun commandDao(): CommandDao
-    abstract fun commandWithPizzasDao(): CommandWithPizzasDao
 
     companion object {
         @Volatile
